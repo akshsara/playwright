@@ -3,7 +3,7 @@ package HomePage;
 import com.microsoft.playwright.Page;
 
 public class HomePage {
-    private Page page;
+    private final Page page;
     private String user_name = "//input[@id='user-name']";
     private String password = "//input[@id='password']";
     private String search_button = "//input[@id='login-button']";
@@ -20,7 +20,9 @@ public class HomePage {
 
 
     public String HomePageUrl() {
-        return page.url();
+        String url = page.url();
+        System.out.println("Home Page URL: " + url);
+        return url;
     }
 
     public String user_name(String user_name) {
